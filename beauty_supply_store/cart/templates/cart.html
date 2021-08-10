@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+{% extends 'index.html' %}
+
+{% block product%}
+<p class="label-txt" id="info_txt"> Shopping Cart </p>
+<table class="cart">
+    <thead class="thead">
+    <tr>
+        <th class="th">Image</th>
+        <th class="th">Product</th>
+        <th class="th">Quantity</th>
+        <th class="th">Unit Price</th>
+        <th class="th">Price</th>
+        <th class="th">Remove</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in cart %}
+    {% with product=item.product %}
+    <tr>
+        <td>
+            <a href="{{ product.get_absolute_url }}">
+                <img class="cart_img" src='{{ product.image.url }}'>
+            </a>
+        </td>
+        <td class="cart_info">{{ product.title }}</td>
+        <td class="cart_info">{{ item.quantity }}</td>
+        <td class="cart_info"> {{ item.price }}</td>
+        <td class="cart_info"> {{ item.total_price }}</td>
+        <td>
+            <form action="{% url 'cart:cart_remove' product.id %}" method="post">
+            <input class = "bn_remove" type="submit" value="Remove">
+            {% csrf_token %}
+            </form>
+        </td>
+    </tr>
+    {% endwith %}
+    {% endfor %}
+    <tr>
+        <td class="cart_info" id="total"> Total </td>
+        <td colspan="4"></td>
+        <td class="cart_info" id="total"> {{ cart.get_total_price }}</td>
+    </tr>
+    </tbody>
+</table>
+<p id="continue">
+    <a id="continue_shop" href="/"> Continue Shopping </a>
+</p>
+{% endblock product %}
+
+</html>

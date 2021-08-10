@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+{% extends 'index.html' %}
+
+{% block product%}
+{% if searched_product.exists %}
+<p class="results"> Results for "{{searched}}" </p>
+{% for product in searched_product %}
+<div class="container">
+    <p><img id="img_small" src='{{ product.image.url }}'></p>
+    <div class="overlay">
+        <div id="product_cat"><p><a class="product" id="product_name"
+                                     href = "/product/ {{product.id }}"> {{ product.title }} </a></p>
+            <p><a class="product" id="product_price" href = "/product/ {{product.id }}">
+                {{ product.price }} € </a></p></div>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<p class="results"> No results for "{{searched}}" </p>
+{% endif %}
+{% endblock product %}
+
+</html>

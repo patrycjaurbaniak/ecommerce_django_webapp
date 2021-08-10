@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+{% extends 'index.html' %}
+
+{% block product%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% for message in messages %}
+<p class="message">{{message}}</p>
+{% endfor %}
+<form method="POST" action="">
+    {% csrf_token %}
+    <p class="label-txt">Username</p>
+    <p class="input">{{ form.username }}</p>
+    <p class="label-txt">Password</p>
+    <p class="input">{{ form.password }}</p>
+    <button class="bn_log" type="submit"> Login </button>
+</form>
+{% endblock product %}
+
+</html>
+

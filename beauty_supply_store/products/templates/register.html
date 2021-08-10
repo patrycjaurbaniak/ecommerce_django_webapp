@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+{% extends 'index.html' %}
+
+{% block product%}
+
+<div class="register_form">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p class="label-txt">Username</p>
+        <p class="input">{{form.username}}</p>
+        <p class="label-txt">Email</p>
+        <p class="input">{{form.email}}</p>
+        <p class="label-txt">First name</p>
+        <p class="input">{{form.first_name}}</p>
+        <p class="label-txt">Last name</p>
+        <p class="input">{{form.last_name}}</p>
+        <p class="label-txt">Password</p>
+        <p class="input">{{form.password1}}</p>
+        <p class="label-txt">Password confirmation</p>
+        <p class="input">{{form.password2}}</p>
+        {% for errors in form.errors.values %}
+        <p class="errors"> {{errors}} </p>
+        {% endfor %}
+        <p></p>
+        <button class="bn_log" type="submit"> Register </button>
+    </form>
+
+</div>
+<div>
+</div>
+{% endblock product %}
+
+</html>
