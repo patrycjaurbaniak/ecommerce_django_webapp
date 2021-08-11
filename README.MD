@@ -35,7 +35,6 @@ Change SECRET KEY, and DEBUG in beauty_supply_store/beauty_supply_store/settings
 
 ## TO DO
 - Checkout
-- Changing password (users)
 - Creating and managing orders
 - Possibility to add a multiple pieces of the product to the cart at the same time
 - Checking if the amount of pieces of the product added to the cart is not greater than its quantity available in store
