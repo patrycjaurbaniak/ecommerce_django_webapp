@@ -12,7 +12,8 @@ As User (Public or Logged in)
 - Creating an account
 - Login/Logout
 - Contact Form
-- Cart (Adding to cart and managing a cart)
+- Cart (Adding to a cart and managing a cart)
+- Changing password (as a logged in user)
 
 As Admin
 - Adding, deleting and updating products
