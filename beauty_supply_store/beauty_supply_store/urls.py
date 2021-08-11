@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views as auth_views
 from products.views import *
 from cart.views import *
 
@@ -18,5 +19,6 @@ urlpatterns = [
     path('register/', register_user, name="register"),
     path('search/', search, name='search'),
     path('contact/', contact, name='contact'),
+    path('password/', change_password, name='change_password'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

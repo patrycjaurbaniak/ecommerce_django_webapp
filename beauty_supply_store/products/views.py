@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import CreateUserForm
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.contrib.auth import authenticate, login, logout
-from cart.forms import CartAddForm
+from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.decorators import login_required
+from cart.forms import CartAddForm
+
 
 
 def index(request):
@@ -118,3 +119,18 @@ def contact(request):
         return render(request, 'contact_thanks.html', {})
     else:
         return render(request, 'contact.html')
+
+
+@login_required(redirect_field_name='login')
+def change_password(request):
+    message=""
+    if request.method == 'POST':
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            form.save()
+            update_session_auth_hash(request, form.user)
+            message="Your password has been changed!"
+    else:
+        form = PasswordChangeForm(request.user)
+    return render(request, 'change_password.html', {'form': form, 'message': message})
+
