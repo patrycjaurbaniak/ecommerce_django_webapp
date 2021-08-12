@@ -552,3 +552,23 @@ textarea{
 #continue_shop:hover{
   color:#fad8eace;
 }
+
+
+#id_quantity{
+  text-decoration: none;
+  color: #b487a0;
+  font: 15px Verdana, Monaco, "Times New Roman", serif;
+  border: #b487a0;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+
+.cart_empty{
+  font: 17px Verdana, Monaco, "Times New Roman", serif;
+  color: #b487a0;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-right: 90px;
+  text-align: center;
+}

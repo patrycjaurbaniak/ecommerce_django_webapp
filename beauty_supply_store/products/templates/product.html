@@ -12,8 +12,8 @@
     <p> Producer: {{ product_user.producer }} </p>
     <p> Price: {{ product_user.price }} €</p>
     <p> Description: {{ product_user.description }} </p>
-    <form action="{% url "cart:cart_add" product_user.id %}" method='POST'>
-    {{ cart_product_form }}
+    <form action="{% url 'cart:cart_add' product_user.id %}" method='POST'>
+    {{cart_product_form}}
     {% csrf_token %}
     <p> <button class="bn_cart" type="submit"> Add To Cart </button></p>
     </form>

@@ -5,6 +5,8 @@
 
 {% block product%}
 <p class="label-txt" id="info_txt"> Shopping Cart </p>
+{% with total_items=cart|length %}
+{% if total_items > 0 %}
 <table class="cart">
     <thead class="thead">
     <tr>
@@ -45,6 +47,10 @@
     </tr>
     </tbody>
 </table>
+{% else %}
+<p class="cart_empty"> Your cart is empty! </p>
+{%endif%}
+{% endwith %}
 <p id="continue">
     <a id="continue_shop" href="/"> Continue Shopping </a>
 </p>

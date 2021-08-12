@@ -13,14 +13,17 @@ def cart_add(request, product_id):
     form = CartAddForm(request.POST)
 
     if form.is_valid():
-        cart.add_cart(products=product)
+        cleaned_data = form.cleaned_data
+        cart.add_cart(products=product, quantity=cleaned_data['quantity'])
     return redirect('cart:cart_detail')
+
 
 def cart_remove(request, product_id):
     cart = Cart(request)
     product = get_object_or_404(Products, id=product_id)
     cart.remove_cart(product)
     return redirect('cart:cart_detail')
+
 
 def cart_detail(request):
     categories = Categories.objects.all()

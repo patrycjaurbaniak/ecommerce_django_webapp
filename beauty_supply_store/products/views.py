@@ -44,6 +44,7 @@ def product_id(request, id):
     product_user = get_object_or_404(Products, id=id)
     categories = Categories.objects.all()
     cart_product_form = CartAddForm()
+
     products_data = {'product_user': product_user, 'categories': categories, 'cart_product_form': cart_product_form}
     return render(request, "product.html", products_data)
 
@@ -123,6 +124,8 @@ def contact(request):
 
 @login_required(redirect_field_name='login')
 def change_password(request):
+    """ View allowing the user to change the password
+    """
     message=""
     if request.method == 'POST':
         form = PasswordChangeForm(request.user, request.POST)
