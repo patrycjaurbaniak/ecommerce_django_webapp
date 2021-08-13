@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from products.views import *
 from cart.views import *
+from accounts.views import *
 
 
 urlpatterns = [
