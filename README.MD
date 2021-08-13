@@ -2,8 +2,8 @@
 Hello! This is my first full e-commerce project!
 
 ## Web View
-You can see the website with example data here: 
-http://ec2-18-221-59-121.us-east-2.compute.amazonaws.com/
+You can see the website on AWS with example data here: 
+http://patrycja.urbaniak.cc/
 
 Preview:
 
