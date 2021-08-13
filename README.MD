@@ -2,7 +2,12 @@
 Hello! This is my first full e-commerce project!
 
 ## Web View
+You can see the website with example data here: 
+http://ec2-18-221-59-121.us-east-2.compute.amazonaws.com/
 
+Preview:
+
+![](images/preview.jpg)
 
 
 ## Key features
@@ -37,5 +42,4 @@ Change SECRET KEY, and DEBUG in beauty_supply_store/beauty_supply_store/settings
 ## TO DO
 - Checkout
 - Creating and managing orders
-- Possibility to add a multiple pieces of the product to the cart at the same time
 - Checking if the amount of pieces of the product added to the cart is not greater than its quantity available in store
