@@ -6,8 +6,11 @@
 {% block product %}
 
 {% if category_product %}
+  <div class="grid">
+    <!-- grid sizer is required to measure column width -->
+    <div class="grid-sizer"></div>
   {% for product in category_product %}
-    <div class="container">
+    <div class="container grid-item">
         <p><img id="img_small" src='{{ product.image.url }}'/></p>
         <div onclick="location.href='/product/{{product.id}}'" class="overlay">
             <div id="product_cat">
@@ -17,7 +20,16 @@
         </div>
     </div>
   {% endfor %}
+  </div>
 {% endif %}
+
+<script>
+  $('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: '.grid-sizer',
+  percentPosition: true
+});
+</script>
 
 {% endblock product %}
 

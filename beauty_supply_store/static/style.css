@@ -4,14 +4,13 @@ body {
 
 
 #right_side{
-  width: 1300px;
-  float: right;
-  margin-right:270px;
+  width: 75%;
+  float: left;
 }
 
 
 #left_bar{
-  width: 230px;
+  width: 15%;
   float: left;
   font: 18px Verdana, Monaco, "Times New Roman", serif;
   padding: 12px;
@@ -78,10 +77,8 @@ body {
   border-radius: 15px;
   font-size: 16px;
   padding: 16px 80px;
-  margin: 14px 2px;
   background-color: white;
   color: #b487a0;
-  margin-left: 39%;
   margin-top:10%
 }
 
@@ -101,10 +98,9 @@ body {
   border-radius: 15px;
   font-size: 16px;
   padding: 16px 80px;
-  margin: 14px 2px;
   background-color: white;
   color: #b487a0;
-  margin-left: 39%;
+
 }
 
 .bn_log:hover {
@@ -177,6 +173,7 @@ body {
 #top{
   background-color: #b487a0;
   height: 60px;
+  width: 100%;
 }
 
 
@@ -214,7 +211,6 @@ body {
 
 .product_img{
   border-radius: 5px;
-  float: left;
 }
 
 
@@ -238,7 +234,6 @@ body {
   width: 33%;
   float: left;
   padding: 5px;
-  top:20%;
 }
 
 .container:hover .overlay {
@@ -257,7 +252,6 @@ body {
 }
 
 .product_des p{
-  display: block;
   font-size: 16px ;
   font-family: Verdana, Monaco, "Times New Roman", serif;
   text-align: justify;
@@ -266,14 +260,15 @@ body {
 .product_des{
   color: #b487a0;
   text-decoration: none;
-  margin-left:10px;
+  margin-left:20px;
   margin-top: 30px;
+  width: 100%;
 }
 
 .product_des img{
   margin-right: 20px;
-  width: 600px;
-  height: 800px;
+  width: 300px;
+  height: 400px;
 }
 
 
@@ -302,7 +297,6 @@ body {
 
 .carousel-item{
   max-height: 500px;
-  max-width: 1400px;
 }
 
 
@@ -521,10 +515,8 @@ textarea{
   border: 2px solid #b487a0;
   background-color: white;
   border-radius: 8px;
-  position: absolute;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  right:12.7%;
+  display: block;
+  margin: auto;
  }
 
 .bn_remove:hover{
@@ -571,4 +563,49 @@ textarea{
   margin-top: 50px;
   margin-right: 90px;
   text-align: center;
+}
+
+
+#cart_product_title{
+  color: #b487a0;
+  font: 14px Verdana, Monaco, "Times New Roman", serif;
+  text-align: center;
+  height:120px;
+  text-decoration: none;
+}
+
+#cart_product_title:hover{
+  color: #fad8eace;
+}
+
+
+.product_container{
+  width: 35%;
+  margin: auto;
+  float: left;
+}
+
+
+.product_img_div{
+  float: left;
+}
+
+/*.masonry{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100vw;
+  align-content: center;
+}*/
+
+.grid-sizer,
+.grid-item {
+  width: 33%;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }

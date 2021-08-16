@@ -27,15 +27,16 @@
                 <img class="cart_img" src='{{ product.image.url }}'>
             </a>
         </td>
-        <td class="cart_info">{{ product.title }}</td>
+        <td class="cart_info"><a id="cart_product_title" href="/product/{{product.id}}"> {{ product.title }}</a></td>
         <td class="cart_info">{{ item.quantity }}</td>
         <td class="cart_info"> {{ item.price }}</td>
         <td class="cart_info"> {{ item.total_price }}</td>
         <td>
             <form action="{% url 'cart:cart_remove' product.id %}" method="post">
-            <input class = "bn_remove" type="submit" value="Remove">
-            {% csrf_token %}
+                <input class = "bn_remove" type="submit" value="Remove">
+                {% csrf_token %}
             </form>
+            </div>
         </td>
     </tr>
     {% endwith %}
