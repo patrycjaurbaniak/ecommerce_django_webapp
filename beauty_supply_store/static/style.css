@@ -307,7 +307,8 @@ body {
 
 
 #product_title{
-  font: 24px bold;
+  font: 28px bold;
+  text-transform: uppercase;
 }
 
 
@@ -531,19 +532,19 @@ textarea{
 
 
 .th{
+  width: 15%;
   color: #b487a0;
-  font: 16px Verdana, Monaco, "Times New Roman", serif;
+  font: 18px Verdana, Monaco, "Times New Roman", serif;
   text-align: center;
+  position: relative;
 }
 
 
 .cart_img{
-  height: 85px;
-  width: 65px;
+  max-width:30%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 37%;
 }
 
 
@@ -557,8 +558,12 @@ textarea{
 
 #total{
   font-weight: bold;
+  font-size:18px;
 }
 
+.product_img_div{
+  float:left;
+}
 
 .bn_remove{
   color: #b487a0;
@@ -637,11 +642,6 @@ textarea{
 .product_container{
   width: 35%;
   margin: auto;
-  float: left;
-}
-
-
-.product_img_div{
   float: left;
 }
 
